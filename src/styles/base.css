@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  background: #fff5fb;
+  font-family: "Nunito", sans-serif;
+}
+
+main {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+button {
+  font-family: inherit;
+}
+
+.mobile-menu button {
+  border: 0;
+  background: #fff5fb;
+  color: #333;
+  border-radius: 12px;
+  padding: 12px;
+  font-weight: 800;
+  text-align: left;
+}
+
+.gallery-head button {
+  background: #fff;
+  border: 1.5px solid #ffd6ec;
+  border-radius: 999px;
+  padding: 7px 18px;
+  font-weight: 800;
+  font-size: 0.8rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #333;
+}
+
+.socials button {
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  border: 0;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.footer button {
+  display: block;
+  border: 0;
+  background: transparent;
+  color: #fff;
+  opacity: 0.82;
+  font-size: 0.85rem;
+  margin-bottom: 6px;
+  cursor: pointer;
+  text-align: left;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ff6eb4;
+  border-radius: 99px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fff0f8;
+}

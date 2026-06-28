@@ -1,0 +1,738 @@
+@media (max-width: 640px) {
+  .desktop-nav {
+    display: none;
+  }
+
+  .mobile-toggle {
+    display: block;
+  }
+
+  .hero-grid,
+  .two-col,
+  .footer-grid {
+    gap: 20px;
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding-top: 96px;
+  }
+
+  .hero-photo-wrap {
+    order: -1;
+  }
+
+  .footer-note-wrap {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 42px 4%;
+  }
+
+  .panel,
+  .gallery-panel {
+    padding: 22px;
+    border-radius: 18px;
+  }
+
+  .student-grid,
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .structure-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .line.horizontal {
+    width: 2px;
+    height: 20px;
+  }
+
+  .stats {
+    gap: 20px;
+  }
+
+  .gallery-head,
+  .section-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .brand span {
+    font-size: 0.85rem;
+  }
+
+  .gallery-card {
+    min-width: 140px;
+    height: 100px;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer {
+    padding: 40px 5% 24px;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px 22px;
+    align-items: start;
+  }
+
+  /* Bagian logo + deskripsi tetap full width di atas */
+  .footer-grid > div:nth-child(1) {
+    grid-column: 1 / -1;
+  }
+
+  /* Link cepat di kiri */
+  .footer-grid > div:nth-child(2) {
+    grid-column: 1;
+  }
+
+  /* Kontak Kami + Our School di kanan */
+  .footer-grid > div:nth-child(3) {
+    grid-column: 2;
+  }
+
+  /* Thanks for visiting tetap full width */
+  .footer-note-wrap {
+    grid-column: 1 / -1;
+    justify-content: flex-start;
+  }
+
+  .footer h3 {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+  }
+
+  .footer button,
+  .footer p {
+    font-size: 0.82rem;
+  }
+
+  .contact-line {
+    gap: 8px;
+    margin-bottom: 10px;
+    word-break: break-word;
+  }
+
+  .contact-icon {
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .footer-note {
+    max-width: 190px;
+    font-size: 1rem;
+  }
+
+  .copyright {
+    font-size: 0.78rem;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 36px 16px;
+  }
+
+  .two-col {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .panel,
+  .gallery-panel {
+    width: 100%;
+    padding: 24px 20px;
+    overflow: hidden;
+  }
+
+  .student-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .student-card {
+    width: 100%;
+    min-width: 0;
+    padding: 12px;
+  }
+
+  .student-card > div {
+    width: 42px;
+    height: 42px;
+  }
+
+  .student-card strong {
+    font-size: 0.82rem;
+  }
+
+  .student-card span {
+    font-size: 0.7rem;
+  }
+
+  .project-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .project-card {
+    width: 100%;
+    min-width: 0;
+    height: 140px;
+    aspect-ratio: unset;
+  }
+
+  .project-card h3 {
+    font-size: 0.78rem;
+  }
+
+  .project-card p {
+    font-size: 0.65rem;
+  }
+
+  .structure-chart {
+    gap: 12px;
+  }
+
+  .structure-bottom {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .node-box {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+@media (max-width: 420px) {
+  .student-grid,
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card {
+    height: 150px;
+  }
+}
+
+/* ========================= */
+/* SMALL PHONE FIX 360px-400px */
+/* ========================= */
+
+@media (max-width: 430px) {
+  .navbar {
+    padding: 0 18px;
+  }
+
+  .nav-inner {
+    height: 72px;
+  }
+
+  .brand span {
+    font-size: 0.9rem;
+  }
+
+  .brand-logo-image {
+    width: 42px;
+    height: 42px;
+  }
+
+  .mobile-toggle {
+    width: 48px;
+    height: 48px;
+    font-size: 1.5rem;
+  }
+
+  .section {
+    padding: 32px 14px;
+  }
+
+  .panel,
+  .gallery-panel {
+    padding: 22px 18px;
+    border-radius: 22px;
+  }
+
+  .section-header h2,
+  .gallery-head h2 {
+    font-size: 1.65rem;
+    line-height: 1.15;
+    gap: 8px;
+  }
+
+  .dark-pill {
+    padding: 10px 20px;
+    font-size: 0.82rem;
+  }
+
+  /* Hero */
+  .hero {
+    padding: 92px 18px 42px;
+  }
+
+  .hero-grid {
+    gap: 28px;
+  }
+
+  .photo-card {
+    max-width: 100%;
+    padding: 10px 10px 38px;
+  }
+
+  .dkv-badge {
+    font-size: 1.5rem;
+    top: -16px;
+  }
+
+  .photo-caption {
+    font-size: 0.85rem;
+  }
+
+  .eyebrow {
+    font-size: 0.72rem;
+    padding: 6px 12px;
+  }
+
+  .hero-title span {
+    font-size: 3.2rem;
+    line-height: 0.95;
+  }
+
+  .hero-title strong {
+    font-size: 1.75rem;
+    line-height: 1.05;
+  }
+
+  .hero-desc {
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+
+  .hero-actions {
+    gap: 10px;
+  }
+
+  .stats {
+    gap: 14px;
+  }
+
+  .stats b {
+    font-size: 1.35rem;
+  }
+
+  .stats span {
+    font-size: 0.72rem;
+  }
+
+  /* Struktur kelas */
+  .node-box {
+    min-width: 150px;
+    max-width: 230px;
+    padding: 9px 14px;
+  }
+
+  .structure-bottom .node-box {
+    min-width: 220px;
+  }
+
+  /* Murid */
+  .student-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .student-card {
+    min-height: 74px;
+    padding: 11px 12px;
+  }
+
+  .student-card > div {
+    width: 42px;
+    height: 42px;
+  }
+
+  .student-card strong {
+    font-size: 0.9rem;
+  }
+
+  .student-card span {
+    font-size: 0.74rem;
+  }
+
+  /* Jadwal piket */
+  th,
+  td {
+    font-size: 0.72rem;
+    padding: 8px 6px;
+  }
+
+  td:first-child {
+    font-size: 0.9rem;
+  }
+
+  .check {
+    width: 24px;
+    height: 24px;
+  }
+
+  .keep-creating {
+    gap: 10px;
+  }
+
+  .keep-creating div {
+    font-size: 2rem;
+  }
+
+  .keep-creating strong {
+    font-size: 0.9rem;
+    padding: 9px 14px;
+  }
+
+  /* Project */
+  .project-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .project-card {
+    height: 160px;
+  }
+
+  .project-card h3 {
+    font-size: 0.9rem;
+  }
+
+  .project-card p {
+    font-size: 0.72rem;
+  }
+
+  /* Gallery */
+  .gallery-card {
+    min-width: 145px;
+    height: 115px;
+  }
+
+  .slider-btn {
+    width: 36px;
+    height: 36px;
+  }
+
+  /* Footer */
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .footer-grid > div,
+  .footer-note-wrap {
+    grid-column: 1 / -1 !important;
+  }
+
+  .footer-brand {
+    flex-wrap: wrap;
+  }
+
+  .footer h3 {
+    font-size: 0.95rem;
+  }
+
+  .footer button,
+  .footer p,
+  .contact-line {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .section-header h2,
+  .gallery-head h2 {
+    font-size: 1.45rem;
+  }
+
+  .hero-title span {
+    font-size: 2.8rem;
+  }
+
+  .hero-title strong {
+    font-size: 1.45rem;
+  }
+
+  .panel,
+  .gallery-panel {
+    padding: 20px 16px;
+  }
+
+  .project-card {
+    height: 145px;
+  }
+}
+
+@media (max-width: 430px) {
+  .section {
+    padding: 28px 12px;
+  }
+
+  .panel,
+  .gallery-panel {
+    padding: 18px 14px;
+    border-radius: 18px;
+  }
+
+  .section-header h2,
+  .gallery-head h2 {
+    font-size: 1.35rem;
+    line-height: 1.2;
+  }
+
+  .dark-pill {
+    padding: 9px 16px;
+    font-size: 0.78rem;
+  }
+
+  /* Struktur kelas */
+  .structure-chart {
+    gap: 10px;
+    align-items: center;
+  }
+
+  .node-box {
+    width: auto;
+    min-width: 150px;
+    max-width: 230px;
+    padding: 8px 12px;
+    margin-inline: auto;
+  }
+
+  .structure-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .structure-bottom .node-box {
+    min-width: 210px;
+  }
+
+  /* Daftar murid: 1 kolom stabil */
+  .student-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .student-card {
+    width: 100%;
+    min-width: 0;
+    min-height: 66px;
+    padding: 10px;
+  }
+
+  .student-card > div {
+    width: 38px;
+    height: 38px;
+  }
+
+  .student-card strong {
+    font-size: 0.85rem;
+  }
+
+  .student-card span {
+    font-size: 0.7rem;
+  }
+
+  /* Project: 1 kolom tapi lebih kecil */
+  .project-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .project-card {
+    width: 100%;
+    min-width: 0;
+    height: 135px;
+    aspect-ratio: unset;
+  }
+
+  .project-card h3 {
+    font-size: 0.82rem;
+  }
+
+  .project-card p {
+    font-size: 0.68rem;
+  }
+
+  /* Piket: jangan melebar */
+  .table-wrap {
+    overflow-x: auto;
+  }
+
+  table {
+    min-width: 520px;
+  }
+}
+
+/* ========================= */
+/* FIX SMALL PHONE: PIKET + PROJECT */
+/* ========================= */
+
+@media (max-width: 430px) {
+  /* Jadwal Piket jangan jadi tabel melebar */
+  .table-wrap {
+    overflow-x: visible;
+  }
+
+  table {
+    width: 100%;
+    min-width: 0;
+    border-spacing: 0 8px;
+  }
+
+  th {
+    font-size: 0.7rem;
+    padding: 0 4px;
+  }
+
+  td {
+    font-size: 0.72rem;
+    padding: 8px 4px;
+    line-height: 1.35;
+  }
+
+  td:first-child {
+    font-size: 0.85rem;
+  }
+
+  .check {
+    width: 22px;
+    height: 22px;
+    font-size: 0.65rem;
+  }
+
+  .keep-creating {
+    margin-top: 20px;
+    gap: 10px;
+  }
+
+  .keep-creating div {
+    font-size: 1.8rem;
+  }
+
+  .keep-creating strong {
+    font-size: 0.82rem;
+    padding: 8px 14px;
+    border-radius: 10px;
+  }
+
+  /* Project Kelas balik jadi grid kecil, bukan card melebar keluar */
+  .project-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    width: 100%;
+    max-width: 100%;
+    overflow: visible;
+    padding: 0;
+  }
+
+  .project-card {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    height: 135px;
+    aspect-ratio: unset;
+    border-radius: 16px;
+  }
+
+  .project-card h3 {
+    font-size: 0.82rem;
+  }
+
+  .project-card p {
+    font-size: 0.68rem;
+  }
+
+  .project-icon {
+    font-size: 1.25rem;
+  }
+
+  .project-play {
+    width: 26px;
+    height: 26px;
+    font-size: 0.65rem;
+  }
+}
+
+/* Fix struktur kelas untuk HP besar / DPI 500-600 */
+@media (min-width: 431px) and (max-width: 768px) {
+  .structure-chart {
+    align-items: center;
+    gap: 14px;
+  }
+
+  .node-box {
+    width: fit-content;
+    min-width: 160px;
+    max-width: 250px;
+    padding: 10px 18px;
+    margin-inline: auto;
+  }
+
+  .structure-row {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .structure-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .structure-bottom .node-box {
+    width: fit-content;
+    min-width: 230px;
+    max-width: 280px;
+  }
+
+  .line.horizontal {
+    width: 2px;
+    height: 22px;
+  }
+}
+
+@media (max-width: 430px) {
+  .footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .footer-brand h3 {
+    font-size: 1rem;
+    line-height: 1.2;
+  }
+
+  .footer-brand img {
+    width: 42px;
+    height: 42px;
+  }
+}
