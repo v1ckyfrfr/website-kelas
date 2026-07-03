@@ -25,7 +25,13 @@ This project Unfinished yet.
 * JavaScript (JSX)
 * TypeScript
 * CSS
-* AI Agents (little bit)
+
+## Development Tools
+
+* VS Code
+* Git
+* Github
+* ChatGPT (Development Assistance)
 
 ## Project Structure
 
