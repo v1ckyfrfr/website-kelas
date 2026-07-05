@@ -1,3 +1,7 @@
+## Preview
+
+<img src="screenshots/home.png" width="600">
+
 # DKV Class Website
 
 A modern and responsive class profile website for **DKV (Desain Komunikasi Visual)** built with **Next.js**.
@@ -83,10 +87,6 @@ http://localhost:3000
 npm run build
 npm start
 ```
-
-## Preview
-
-<img src="screenshots/home.png" width="600">
 
 ## Author
 
