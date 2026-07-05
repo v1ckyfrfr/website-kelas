@@ -1,0 +1,315 @@
+/* Filters Row */
+.filters-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 24px;
+  background: #fffafc;
+  padding: 14px 20px;
+  border-radius: 14px;
+  border: 1px dashed #ffc8e0;
+}
+
+.search-wrapper {
+  position: relative;
+  flex-grow: 1;
+  max-width: 400px;
+}
+
+.search-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+  display: inline-flex;
+  align-items: center;
+}
+
+.search-wrapper input {
+  width: 100%;
+  padding: 11px 16px 11px 40px;
+  border: 1.5px solid #ffd4e5;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 0.88rem;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.search-wrapper input:focus {
+  border-color: #ff3d9a;
+  box-shadow: 0 0 0 3px rgba(255, 61, 154, 0.12);
+}
+
+.filter-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.filter-wrapper label {
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.filter-wrapper select {
+  padding: 10px 16px;
+  border: 1.5px solid #ffd4e5;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 0.88rem;
+  background: white;
+  outline: none;
+  font-weight: 700;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-wrapper select:focus {
+  border-color: #ff3d9a;
+}
+
+/* Tables Styling */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.admin-table th {
+  padding: 16px;
+  border-bottom: 2px solid #ffe3ef;
+  font-weight: 800;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  color: #888;
+  letter-spacing: 0.03em;
+}
+
+.admin-table td {
+  padding: 16px;
+  border-bottom: 1px solid #ffeef6;
+  font-size: 0.95rem;
+  vertical-align: middle;
+}
+
+.admin-table tr:last-child td {
+  border-bottom: none;
+}
+
+.student-table-name {
+  color: #222;
+  font-weight: 800;
+}
+
+/* Avatar formatting */
+.table-avatar {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid rgba(255, 105, 180, 0.15);
+}
+
+.table-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatar-emoji {
+  font-size: 1.5rem;
+}
+
+/* Badge role */
+.role-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 99px;
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+.role-badge.member {
+  background: #f3f3f3;
+  color: #666;
+}
+
+.role-badge.officer {
+  background: #ffeef6;
+  color: #ff3d9a;
+  border: 1px solid rgba(255, 61, 154, 0.15);
+}
+
+/* Color Preview */
+.color-preview-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.color-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+  display: inline-block;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.color-hex {
+  font-family: monospace;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #555;
+}
+
+/* Actions buttons */
+.action-buttons-group {
+  display: flex;
+  gap: 8px;
+}
+
+.action-buttons-group button,
+.edit-piket-btn {
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-family: inherit;
+  font-weight: 800;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1.5px solid transparent;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.edit-btn {
+  background: #fff0f7;
+  color: #ff3d9a;
+  border-color: #ffd4e5 !important;
+}
+
+.edit-btn:hover {
+  background: #ff3d9a;
+  color: white;
+  border-color: #ff3d9a !important;
+}
+
+.delete-btn {
+  background: #fff5f5;
+  color: #e03a3a;
+  border-color: #ffd6d6 !important;
+}
+
+.delete-btn:hover {
+  background: #e03a3a;
+  color: white;
+  border-color: #e03a3a !important;
+}
+
+.empty-table-state {
+  text-align: center;
+  padding: 40px !important;
+  color: #888;
+  font-weight: 700;
+  font-style: italic;
+  background: #fffbfd;
+}
+
+/* Piket Admin Panel styling */
+.piket-grid-admin {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 12px;
+}
+
+.piket-card-admin {
+  background: #fffcfd;
+  border: 1.5px solid #ffd4e5;
+  border-radius: 18px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.piket-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1.5px solid #ffeef5;
+  padding-bottom: 12px;
+}
+
+.piket-card-header h4 {
+  font-size: 1.15rem;
+  font-weight: 900;
+  color: #ff3d9a;
+}
+
+.piket-group-badge {
+  background: #fff0f7;
+  color: #ff3d9a;
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.piket-members-label {
+  font-size: 0.8rem;
+  color: #888;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.piket-members-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.piket-member-tag {
+  background: white;
+  border: 1px solid #ffd4e5;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.edit-piket-btn {
+  width: 100%;
+  text-align: center;
+  background: #fff0f7;
+  color: #ff3d9a;
+  border-color: #ffd4e5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  padding: 10px;
+}
+
+.edit-piket-btn:hover {
+  background: #ff3d9a;
+  color: white;
+  border-color: #ff3d9a;
+}
