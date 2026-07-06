@@ -31,20 +31,22 @@ export function Navbar({ active, setActive }) {
       transition={{ duration: 0.6, ease: "easeOut" }}
       className="navbar"
       style={{
-        background: scrolled ? "rgba(255,255,255,0.96)" : "rgba(255,255,255,0.78)",
+        background: scrolled
+          ? "rgba(255,255,255,0.96)"
+          : "rgba(255,255,255,0.78)",
         boxShadow: scrolled ? "0 2px 20px rgba(255,110,180,0.15)" : "none",
       }}
     >
       <div className="nav-inner">
         <button className="brand" onClick={() => handleNavClick(NAV_LINKS[0])}>
-          <motion.img 
-           whileHover={{
-            rotate: -10,
-            scalei: 1.08
-           }}
-          src="/logo.png"
-          alt="logo DKV"
-          className="brand-logo-image"
+          <motion.img
+            whileHover={{
+              rotate: -10,
+              scalei: 1.08,
+            }}
+            src="/logo.png"
+            alt="logo DKV"
+            className="brand-logo-image"
           />
           <span>DKV 1ST GENERATION</span>
         </button>
@@ -65,7 +67,10 @@ export function Navbar({ active, setActive }) {
           </PinkButton>
         </div>
 
-        <button className="mobile-toggle" onClick={() => setMobileOpen((value) => !value)}>
+        <button
+          className="mobile-toggle"
+          onClick={() => setMobileOpen((value) => !value)}
+        >
           {mobileOpen ? "×" : "☰"}
         </button>
       </div>
