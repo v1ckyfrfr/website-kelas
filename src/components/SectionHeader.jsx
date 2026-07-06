@@ -1,13 +1,17 @@
 import { motion } from "framer-motion";
 
-export function SectionHeader({ icon, iconColor = "#ff3d9a", title, btnText, onClick }) {
+export function SectionHeader({
+  icon,
+  iconColor = "#ff3d9a",
+  title,
+  btnText,
+  onClick,
+}) {
   return (
     <div className="section-header">
       <h2>
-        <span style={{ color: iconColor, display: "inline-flex" }}>
-          {icon}
-          </span>
-           {title}
+        <span style={{ color: iconColor, display: "inline-flex" }}>{icon}</span>
+        {title}
       </h2>
 
       {btnText && (
