@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { FaCalendarAlt } from "react-icons/fa";
 
@@ -10,6 +10,14 @@ import { PROJECTS } from "@/data/projects";
 
 export function PiketSection() {
   const [showAllProject, setShowAllProject] = useState(false);
+  const [piket, setPiket] = useState(PIKET);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const storedPiket = localStorage.getItem("dkv_piket");
+      if (storedPiket) setPiket(JSON.parse(storedPiket));
+    }
+  }, []);
 
   const dayColors = {
     Senin: "#ff6eb4",
@@ -41,7 +49,7 @@ export function PiketSection() {
                 </thead>
 
                 <tbody>
-                  {PIKET.map((item, index) => (
+                  {piket.map((item, index) => (
                     <motion.tr
                       key={item.day}
                       initial={{ opacity: 0, x: -12 }}
