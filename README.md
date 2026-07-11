@@ -21,6 +21,7 @@ This project Unfinished yet.
 * Class duty schedule (Piket)
 * Contact page
 * Smooth scrolling and simple animations
+* Dark Mode
 
 ## Tech Stack
 
@@ -29,6 +30,7 @@ This project Unfinished yet.
 * JavaScript (JSX)
 * TypeScript
 * CSS
+* Supabase
 
 ## Development Tools
 
