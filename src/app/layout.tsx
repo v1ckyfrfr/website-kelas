@@ -1,5 +1,12 @@
 import { title } from "process";
+import { Nunito } from "next/font/google";
 import "./globals.css";
+
+const nunito = Nunito({
+  subsets: ["latin"],
+  weight: ["400", "600", "700", "800", "900"],
+  display: "swap",
+});
 
 export const metadata = {
   title: "Website Kelas DKV",
@@ -18,7 +25,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="id">
-      <body>{children}</body>
+      <body className={nunito.className}>{children}</body>
     </html>
   );
 }
