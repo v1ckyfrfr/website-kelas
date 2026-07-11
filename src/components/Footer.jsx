@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { FaInstagram, FaTiktok, FaGlobe, FaYoutube } from "react-icons/fa";
+import Image from "next/image";
 
 import { Reveal } from "@/components/Reveal";
 
@@ -12,12 +13,20 @@ export function Footer() {
         <div className="footer-grid">
           <div>
             <div className="footer-brand">
-              <img src="/dkv.png" alt="logo DKV" className="brand-logo-image" />
+              <Image
+                src="/dkv.png"
+                alt="logo DKV"
+                className="brand-logo-image"
+                width={40}
+                height={40}
+              />
               <span>Desain Komunikasi Visual</span>
-              <img
+              <Image
                 src="/dhakar.png"
                 alt="logo Dhakar"
                 className="brand-logo-image"
+                width={40}
+                height={40}
               />
               <span>SMK DHARMA KARYA</span>
             </div>

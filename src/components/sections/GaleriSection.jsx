@@ -6,16 +6,30 @@ import Image from "next/image";
 
 import { Reveal } from "@/components/Reveal";
 
-import {
-  GALLERY_ITEMS,
-  GALLERY_COLORS,
-} from "@/data/gallery";
+import { GALLERY_ITEMS, GALLERY_COLORS } from "@/data/gallery";
+import { supabase } from "@/lib/supabase";
 
 export function GaleriSection() {
   const sliderRef = useRef(null);
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [gallery, setGallery] = useState(
+    GALLERY_ITEMS.map((url) => ({ url, caption: "" })),
+  );
 
-  const totalSlides = GALLERY_ITEMS.length;
+  const totalSlides = gallery.length;
+
+  useEffect(() => {
+    // Fetch gallery from Supabase (live data from admin)
+    supabase
+      .from("gallery")
+      .select("*")
+      .order("created_at", { ascending: false })
+      .then(({ data }) => {
+        if (data && data.length > 0) {
+          setGallery(data);
+        }
+      });
+  }, []);
 
   useEffect(() => {
     if (totalSlides <= 1) return;
@@ -30,7 +44,7 @@ export function GaleriSection() {
 
         return nextSlide;
       });
-    }, 1000);
+    }, 3000);
 
     return () => clearInterval(interval);
   }, [totalSlides]);
@@ -93,34 +107,39 @@ export function GaleriSection() {
 
             <div className="slider-window" ref={sliderRef}>
               <div className="slider-track">
-                {GALLERY_ITEMS.map((item, index) => (
-                  <motion.div
-                    key={`${item}-${index}`}
-                    whileHover={{
-                      scale: 1.05,
-                      rotate: index % 2 === 0 ? -1 : 1,
-                    }}
-                    whileTap={{ scale: 0.97 }}
-                    className="gallery-card"
-                    style={{
-                      background:
-                        GALLERY_COLORS[index % GALLERY_COLORS.length],
-                    }}
-                  >
-                    <Image
-                      src={item}
-                      alt={`Galeri kegiatan ${index + 1}`}
-                      width={800}
-                      height={500}
-                      style={{
-                        width: "100%",
-                        height: "100%",
-                        objectFit: "cover",
-                        borderRadius: "16px",
+                {gallery.map((item, index) => {
+                  const imgSrc = typeof item === "string" ? item : item.url;
+                  const caption =
+                    typeof item === "object" ? item.caption : null;
+                  return (
+                    <motion.div
+                      key={`${imgSrc}-${index}`}
+                      whileHover={{
+                        scale: 1.05,
+                        rotate: index % 2 === 0 ? -1 : 1,
                       }}
-                    />
-                  </motion.div>
-                ))}
+                      whileTap={{ scale: 0.97 }}
+                      className="gallery-card"
+                      style={{
+                        background:
+                          GALLERY_COLORS[index % GALLERY_COLORS.length],
+                      }}
+                    >
+                      <Image
+                        src={imgSrc}
+                        alt={caption || `Galeri kegiatan ${index + 1}`}
+                        width={800}
+                        height={500}
+                        style={{
+                          width: "100%",
+                          height: "100%",
+                          objectFit: "cover",
+                          borderRadius: "16px",
+                        }}
+                      />
+                    </motion.div>
+                  );
+                })}
               </div>
             </div>
 

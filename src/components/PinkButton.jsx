@@ -1,6 +1,11 @@
 import { motion } from "framer-motion";
 
-export function PinkButton({ children, outline = false, onClick, small = false }) {
+export function PinkButton({
+  children,
+  outline = false,
+  onClick,
+  small = false,
+}) {
   return (
     <motion.button
       whileHover={{ y: -3, scale: 1.04 }}
@@ -8,7 +13,9 @@ export function PinkButton({ children, outline = false, onClick, small = false }
       transition={{ type: "spring", stiffness: 320, damping: 18 }}
       onClick={onClick}
       style={{
-        background: outline ? "transparent" : "linear-gradient(135deg, #ff6eb4 0%, #ff3d9a 100%)",
+        background: outline
+          ? "transparent"
+          : "linear-gradient(135deg, #ff6eb4 0%, #ff3d9a 100%)",
         color: outline ? "#ff3d9a" : "#fff",
         border: outline ? "2px solid #ff3d9a" : "none",
         borderRadius: "999px",

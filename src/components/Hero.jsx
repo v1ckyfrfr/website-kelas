@@ -7,6 +7,8 @@ import { GiFlowerEmblem } from "react-icons/gi";
 
 import { scrollToSection } from "@/utils/scrollToSection";
 
+import Image from "next/image";
+
 export function Hero() {
   return (
     <section id="beranda" className="hero">
@@ -115,15 +117,16 @@ export function Hero() {
             className="photo-card"
           >
             <div className="photo-placeholder">
-              <div>
-                <img
+              <div
+                style={{ position: "relative", width: "100%", height: "100%" }}
+              >
+                <Image
                   src="/gallery/kartini.jpg"
                   alt="Foto Kelas"
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "cover",
-                  }}
+                  fill
+                  priority
+                  sizes="(max-width: 768px) 100vw, 500px"
+                  style={{ objectFit: "cover" }}
                 />
               </div>
 

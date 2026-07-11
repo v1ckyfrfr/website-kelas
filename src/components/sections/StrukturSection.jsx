@@ -1,5 +1,8 @@
+"use client";
+
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 import { Reveal } from "@/components/Reveal";
 import { SectionHeader } from "@/components/SectionHeader";
@@ -8,6 +11,66 @@ import { StructureNode } from "@/components/StructureNode";
 import { STRUCTURE } from "@/data/structure";
 import { STUDENTS } from "@/data/students";
 import { StudentIcon } from "@/app/internal/dashb0ard/components/StudentIcon";
+import { supabase } from "@/lib/supabase";
+
+// ── StudentCard — hover dikelola via state (bukan whileHover inline)
+// agar warna tidak desync saat dark mode toggle
+function StudentCard({ student, index }) {
+  const [hovered, setHovered] = useState(false);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 18 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      onHoverStart={() => setHovered(true)}
+      onHoverEnd={() => setHovered(false)}
+      animate={hovered ? { y: -4, scale: 1.02 } : { y: 0, scale: 1 }}
+      transition={{ duration: 0.35, delay: index * 0.035 }}
+      className="student-card"
+      style={
+        hovered
+          ? {
+              borderColor: "#ff6eb4",
+              boxShadow: "0 10px 22px rgba(255,110,180,0.22)",
+            }
+          : undefined
+      }
+    >
+      <div
+        style={{
+          background: `${student.color}33`,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        {student.photo ? (
+          <Image
+            src={student.photo}
+            alt={student.name}
+            width={40}
+            height={40}
+            style={{
+              objectFit: "cover",
+              borderRadius: "999px",
+            }}
+          />
+        ) : (
+          <StudentIcon
+            icon={student.icon || "palette"}
+            color={student.color}
+            size="1.5rem"
+          />
+        )}
+      </div>
+      <section>
+        <strong>{student.name}</strong>
+        <span>{student.role}</span>
+      </section>
+    </motion.div>
+  );
+}
 
 export function StrukturSection({ setActiveNav }) {
   const [showAllMurid, setShowAllMurid] = useState(false);
@@ -15,13 +78,21 @@ export function StrukturSection({ setActiveNav }) {
   const [structure, setStructure] = useState(STRUCTURE);
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      const storedStudents = localStorage.getItem("dkv_students");
-      if (storedStudents) setStudents(JSON.parse(storedStudents));
+    supabase
+      .from("students")
+      .select("*")
+      .order("created_at", { ascending: true })
+      .then(({ data }) => {
+        if (data && data.length > 0) setStudents(data);
+      });
 
-      const storedStructure = localStorage.getItem("dkv_structure");
-      if (storedStructure) setStructure(JSON.parse(storedStructure));
-    }
+    supabase
+      .from("structure")
+      .select("*")
+      .order("order", { ascending: true })
+      .then(({ data }) => {
+        if (data && data.length > 0) setStructure(data);
+      });
   }, []);
 
   return (
@@ -70,52 +141,11 @@ export function StrukturSection({ setActiveNav }) {
             <div className="student-grid">
               {(showAllMurid ? students : students.slice(0, 8)).map(
                 (student, index) => (
-                  <motion.div
-                    key={student.name}
-                    initial={{ opacity: 0, y: 18 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    whileHover={{
-                      y: -4,
-                      scale: 1.02,
-                      borderColor: "#ff6eb4",
-                      boxShadow: "0 10px 22px rgba(255,110,180,0.22)",
-                    }}
-                    transition={{ duration: 0.35, delay: index * 0.035 }}
-                    className="student-card"
-                  >
-                    <div
-                      style={{
-                        background: `${student.color}33`,
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                      }}
-                    >
-                      {student.photo ? (
-                        <img
-                          src={student.photo}
-                          alt={student.name}
-                          style={{
-                            width: "100%",
-                            height: "100%",
-                            objectFit: "cover",
-                            borderRadius: "999px",
-                          }}
-                        />
-                      ) : (
-                        <StudentIcon
-                          icon={student.icon || "palette"}
-                          color={student.color}
-                          size="1.5rem"
-                        />
-                      )}
-                    </div>
-                    <section>
-                      <strong>{student.name}</strong>
-                      <span>{student.role}</span>
-                    </section>
-                  </motion.div>
+                  <StudentCard
+                    key={student.id ?? student.name}
+                    student={student}
+                    index={index}
+                  />
                 ),
               )}
             </div>
