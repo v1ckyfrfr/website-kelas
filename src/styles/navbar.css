@@ -73,11 +73,17 @@
   width: 40px;
   height: 40px;
   border-radius: 12px;
-  border: 1px solid #ffd6ec;
-  background: #fff;
+  border: 1.5px solid #ffd6ec;
+  background: var(--mobile-menu-bg, #fff);
   color: #ff3d9a;
   font-size: 1.3rem;
   cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background 0.2s,
+    border-color 0.2s;
+  flex-shrink: 0;
 }
 
 .mobile-menu {

@@ -1,0 +1,717 @@
+/* ══════════════════════════════════════════════════════════════
+   DARK MODE — Biru Gelap & Biru Dongker
+   Palette:
+     bg utama    : #060d1f  (navy sangat gelap)
+     bg card     : #0d1b3e  (biru dongker)
+     bg panel    : #0f2050  (biru medium)
+     bg elevated : #162554  (biru lebih terang)
+     border      : #1e3a6e  (biru border)
+     text primer  : #e8eeff  (putih kebiruan)
+     text sekunder: #7e9bc0  (abu biru)
+     aksen pink  : #ff4fa5  (pink tetap, sedikit lebih terang)
+     aksen glow  : rgba(255,79,165,0.18)
+   ══════════════════════════════════════════════════════════════ */
+
+/* ── Root Variables ─────────────────────────────────────────── */
+:root {
+  --bg-body: #fff5fb;
+  --bg-card: #ffffff;
+  --bg-panel: #fff9fd;
+  --bg-section-pink: #fdf4fb;
+  --bg-input: #ffffff;
+  --text-primary: #1a1a1a;
+  --text-secondary: #666666;
+  --text-muted: #888888;
+  --border-color: #ffd6ec;
+  --border-soft: #ffe3ef;
+  --scrollbar-bg: #fff0f8;
+  --nav-bg-scroll: rgba(255, 255, 255, 0.96);
+  --nav-bg: rgba(255, 255, 255, 0.78);
+  --mobile-menu-bg: #fff;
+  --node-bg: #ffffff;
+  --slider-btn-bg: #ffffff;
+  --transition: 0.3s ease;
+}
+
+html.dark {
+  --bg-body: #060d1f;
+  --bg-card: #0d1b3e;
+  --bg-panel: #0f2050;
+  --bg-section-pink: #0a1530;
+  --bg-input: #0f2050;
+  --text-primary: #e8eeff;
+  --text-secondary: #9ab2d8;
+  --text-muted: #7e9bc0;
+  --border-color: #1e3a6e;
+  --border-soft: #1a3060;
+  --scrollbar-bg: #0d1b3e;
+  --nav-bg-scroll: rgba(6, 13, 31, 0.96);
+  --nav-bg: rgba(6, 13, 31, 0.82);
+  --mobile-menu-bg: #0d1b3e;
+  --node-bg: #0f2050;
+  --slider-btn-bg: #0f2050;
+}
+
+/* ── Body & Base ─────────────────────────────────────────────── */
+body {
+  background: var(--bg-body);
+  transition:
+    background var(--transition),
+    color var(--transition);
+  color: var(--text-primary);
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+  background: #1e3a6e;
+}
+html.dark ::-webkit-scrollbar-track {
+  background: var(--scrollbar-bg);
+}
+
+/* ── Navbar ──────────────────────────────────────────────────── */
+html.dark .navbar {
+  background: var(--nav-bg) !important;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.4) !important;
+  border-bottom: 1px solid var(--border-color);
+}
+
+html.dark .brand {
+  color: var(--text-primary);
+}
+
+html.dark .nav-link {
+  color: var(--text-secondary);
+}
+
+html.dark .nav-link:hover,
+html.dark .nav-link.active {
+  color: #ff4fa5;
+  background: rgba(255, 79, 165, 0.12);
+}
+
+html.dark .mobile-toggle {
+  background: var(--bg-card);
+  border-color: var(--border-color);
+  color: #ff4fa5;
+}
+
+html.dark .mobile-menu {
+  background: var(--mobile-menu-bg);
+  border-color: var(--border-color);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
+}
+
+html.dark .mobile-menu button {
+  background: var(--mobile-menu-bg);
+  color: var(--text-primary);
+}
+
+/* ── Hero Section ────────────────────────────────────────────── */
+html.dark .hero {
+  background: linear-gradient(
+    135deg,
+    #060d1f 0%,
+    #091526 40%,
+    #0d1b3e 100%
+  ) !important;
+}
+
+html.dark .blob-right {
+  background: radial-gradient(
+    circle,
+    rgba(255, 79, 165, 0.12) 0%,
+    transparent 70%
+  );
+}
+
+html.dark .blob-left {
+  background: radial-gradient(
+    circle,
+    rgba(30, 58, 110, 0.3) 0%,
+    transparent 70%
+  );
+}
+
+html.dark .eyebrow {
+  background: rgba(255, 79, 165, 0.15);
+  color: #ff6eb4;
+}
+
+html.dark .hero-title strong {
+  color: var(--text-primary);
+}
+
+html.dark .hero-desc {
+  color: var(--text-secondary);
+}
+
+html.dark .stats span {
+  color: var(--text-muted);
+}
+
+html.dark .photo-card {
+  background: var(--bg-card);
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.5),
+    0 4px 16px rgba(255, 79, 165, 0.1);
+}
+
+html.dark .photo-caption {
+  color: var(--text-primary);
+}
+
+/* ── Sections ────────────────────────────────────────────────── */
+html.dark .white-section {
+  background: var(--bg-body);
+}
+
+html.dark .pink-section {
+  background: var(--bg-section-pink);
+}
+
+html.dark .panel,
+html.dark .gallery-panel {
+  background: var(--bg-card);
+  border-color: var(--border-color);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.3);
+}
+
+html.dark .pink-section .panel {
+  background: var(--bg-panel);
+}
+
+html.dark .section-header h2,
+html.dark .gallery-head h2 {
+  color: var(--text-primary);
+}
+
+/* ── Structure ───────────────────────────────────────────────── */
+html.dark .node-box {
+  background: var(--node-bg);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+html.dark .node-box div {
+  opacity: 0.75;
+}
+
+html.dark .line {
+  background: var(--border-color);
+}
+
+/* ── Students Grid ───────────────────────────────────────────── */
+html.dark .student-card {
+  background: var(--bg-card);
+  border-color: var(--border-color);
+}
+
+html.dark .student-card strong {
+  color: var(--text-primary);
+}
+
+html.dark .student-card span {
+  color: #ff6eb4;
+}
+
+/* ── Piket Table ─────────────────────────────────────────────── */
+html.dark table {
+  color: var(--text-primary);
+}
+
+html.dark th {
+  color: var(--text-muted);
+}
+
+html.dark td {
+  color: var(--text-secondary);
+  background: var(--bg-card);
+}
+
+html.dark td:first-child {
+  color: var(--text-primary);
+}
+
+html.dark tr:hover td {
+  background: var(--bg-panel) !important;
+}
+
+/* ── "Keep Creating" pill ────────────────────────────────────── */
+html.dark .keep-creating strong {
+  background: var(--text-primary);
+  color: var(--bg-body);
+}
+
+/* ── Gallery Slider ──────────────────────────────────────────── */
+html.dark .slider-btn {
+  background: var(--slider-btn-bg);
+  border-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+/* ── Dark Pill Button (SectionHeader) ────────────────────────── */
+html.dark .dark-pill {
+  background: var(--border-color);
+  color: var(--text-primary);
+}
+
+/* ── Footer ──────────────────────────────────────────────────── */
+html.dark .footer {
+  background: #030915;
+  border-top: 1px solid var(--border-color);
+}
+
+/* ── Dark Mode Toggle Button (Navbar) ────────────────────────── */
+.dark-mode-toggle {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  border: 1.5px solid var(--border-color);
+  background: var(--bg-card);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  transition: all 0.25s ease;
+  flex-shrink: 0;
+  color: var(--text-primary);
+}
+
+.dark-mode-toggle:hover {
+  border-color: #ff4fa5;
+  background: rgba(255, 79, 165, 0.1);
+  transform: scale(1.05) rotate(12deg);
+}
+
+/* ── Floating Dark Mode Toggle (Mobile & always visible) ─────── */
+.dark-mode-float {
+  position: fixed;
+  bottom: 24px;
+  right: 20px;
+  z-index: 999;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid var(--border-color);
+  background: var(--bg-card);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  box-shadow:
+    0 6px 24px rgba(0, 0, 0, 0.18),
+    0 2px 8px rgba(255, 79, 165, 0.15);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  color: var(--text-primary);
+}
+
+.dark-mode-float:hover {
+  transform: scale(1.12);
+  box-shadow: 0 8px 28px rgba(255, 79, 165, 0.3);
+  border-color: #ff4fa5;
+}
+
+/* Hide floating on desktop (Navbar toggle visible) */
+@media (min-width: 769px) {
+  .dark-mode-float {
+    display: none;
+  }
+}
+
+/* Hide navbar toggle on mobile (floating visible) */
+@media (max-width: 768px) {
+  .dark-mode-toggle {
+    display: none;
+  }
+}
+
+/* ── Dashboard Dark Mode ─────────────────────────────────────── */
+html.dark .dashboard-container {
+  background-color: #060d1f;
+}
+
+html.dark .dashboard-sidebar {
+  background: #0d1b3e;
+  border-right-color: #1e3a6e;
+}
+
+html.dark .sidebar-brand h2,
+html.dark .sidebar-brand span {
+  color: var(--text-primary);
+}
+
+html.dark .brand-subtitle {
+  color: var(--text-muted);
+}
+
+html.dark .role-badge-wrapper {
+  background: #0f2050;
+  border-color: #1e3a6e;
+}
+
+html.dark .role-email {
+  color: var(--text-muted);
+}
+
+html.dark .menu-item {
+  color: var(--text-secondary);
+}
+
+html.dark .menu-item:hover {
+  background: rgba(255, 79, 165, 0.12);
+  color: #ff6eb4;
+}
+
+html.dark .sidebar-footer {
+  border-top-color: #1e3a6e;
+}
+
+html.dark .view-site-btn {
+  background-color: rgba(30, 58, 110, 0.4);
+  color: #7eb3ff;
+}
+
+html.dark .dashboard-main {
+  background: #060d1f;
+}
+
+html.dark .dashboard-header {
+  border-bottom-color: #1e3a6e;
+}
+
+html.dark .header-welcome h1 {
+  color: var(--text-primary);
+}
+
+html.dark .header-welcome p {
+  color: var(--text-secondary);
+}
+
+html.dark .date-badge {
+  background: #0d1b3e;
+  border-color: #1e3a6e;
+  color: #ff6eb4;
+}
+
+html.dark .content-card {
+  background: #0d1b3e;
+  border-color: #1e3a6e;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+html.dark .card-header h3 {
+  color: var(--text-primary);
+}
+
+html.dark .card-header p {
+  color: var(--text-secondary);
+}
+
+html.dark .header-badge {
+  background: rgba(255, 79, 165, 0.2);
+  color: #ff6eb4;
+}
+
+/* Stat cards keep their gradient but slightly dimmed */
+html.dark .stat-card {
+  filter: brightness(0.88) saturate(1.1);
+}
+
+/* Activity items */
+html.dark .activity-item {
+  border-bottom-color: #1e3a6e;
+}
+
+html.dark .activity-icon {
+  background: rgba(30, 58, 110, 0.5);
+}
+
+html.dark .activity-details p {
+  color: var(--text-primary);
+}
+
+html.dark .activity-time {
+  color: var(--text-muted);
+}
+
+html.dark .empty-activity {
+  color: #3a5a8a;
+}
+
+/* Action buttons */
+html.dark .action-btn {
+  background: #0f2050;
+  border-color: #1e3a6e;
+  color: var(--text-secondary);
+}
+
+html.dark .action-btn:hover {
+  border-color: #ff4fa5;
+  background: rgba(255, 79, 165, 0.1);
+  color: #ff6eb4;
+}
+
+/* Tables */
+html.dark .admin-table th {
+  color: var(--text-muted);
+  border-bottom-color: #1e3a6e;
+}
+
+html.dark .admin-table td {
+  color: var(--text-primary);
+  border-bottom-color: #1a3060;
+  background: transparent;
+}
+
+html.dark .student-table-name {
+  color: var(--text-primary);
+}
+
+html.dark .table-avatar {
+  border-color: rgba(30, 58, 110, 0.5);
+}
+
+/* Filters row */
+html.dark .filters-row {
+  background: #0f2050;
+  border-color: #1e3a6e;
+}
+
+html.dark .search-wrapper input,
+html.dark .filter-wrapper select {
+  background: #0d1b3e;
+  border-color: #1e3a6e;
+  color: var(--text-primary);
+}
+
+html.dark .filter-wrapper label {
+  color: var(--text-secondary);
+}
+
+/* Gallery admin grid */
+html.dark .gallery-admin-item {
+  border-color: #1e3a6e;
+  background: #0f2050;
+}
+
+html.dark .gallery-image-info .img-index {
+  color: #ff6eb4;
+}
+
+html.dark .img-path {
+  color: var(--text-muted);
+}
+
+html.dark .empty-gallery-state {
+  color: #3a5a8a;
+}
+
+/* Structure */
+html.dark .structure-row-admin {
+  background: #0f2050;
+  border-color: #1e3a6e;
+}
+
+html.dark .role-meta-info strong {
+  color: var(--text-primary);
+}
+
+html.dark .role-id-tag {
+  color: var(--text-muted);
+}
+
+html.dark .role-holder-name span {
+  color: var(--text-muted);
+}
+
+html.dark .role-emoji-indicator {
+  background: rgba(30, 58, 110, 0.5);
+}
+
+/* Piket cards */
+html.dark .piket-card-admin {
+  background: #0f2050;
+  border-color: #1e3a6e;
+}
+
+html.dark .piket-card-header {
+  border-bottom-color: #1e3a6e;
+}
+
+html.dark .piket-group-badge {
+  background: rgba(30, 58, 110, 0.5);
+}
+
+html.dark .piket-member-tag {
+  background: #0d1b3e;
+  border-color: #1e3a6e;
+  color: var(--text-primary);
+}
+
+html.dark .piket-members-label {
+  color: var(--text-muted);
+}
+
+/* Modal */
+html.dark .modal-overlay {
+  background: rgba(0, 0, 0, 0.75);
+}
+
+html.dark .modal-content {
+  background: #0d1b3e;
+  border: 1px solid #1e3a6e;
+}
+
+html.dark .modal-header {
+  border-bottom-color: #1e3a6e;
+}
+
+html.dark .modal-header h3 {
+  color: var(--text-primary);
+}
+
+html.dark .modal-footer {
+  border-top-color: #1e3a6e;
+}
+
+html.dark .form-group label {
+  color: var(--text-secondary);
+}
+
+html.dark .form-group input[type="text"],
+html.dark .form-group input[type="file"],
+html.dark .form-group input[type="color"],
+html.dark .form-group select,
+html.dark .form-group textarea {
+  background: #0f2050;
+  border-color: #1e3a6e;
+  color: var(--text-primary);
+}
+
+html.dark .form-group input[type="text"]:focus,
+html.dark .form-group select:focus,
+html.dark .form-group textarea:focus {
+  border-color: #ff4fa5;
+  box-shadow: 0 0 0 3px rgba(255, 79, 165, 0.18);
+}
+
+html.dark .form-help-text {
+  color: var(--text-muted);
+}
+
+html.dark .input-readonly {
+  background: #0a1530 !important;
+  color: var(--text-muted) !important;
+}
+
+html.dark .separator-title {
+  color: var(--text-muted);
+  border-color: #1e3a6e;
+}
+
+html.dark .cancel-btn {
+  background: #0f2050;
+  border-color: #1e3a6e;
+  color: var(--text-secondary);
+}
+
+/* Toast */
+html.dark .toast-notification {
+  background: #0d1b3e;
+  border-color: #1e3a6e;
+}
+
+html.dark .toast-notification.error {
+  background: #1a0a0a;
+  border-color: #4a1010;
+}
+
+html.dark .toast-message {
+  color: var(--text-primary);
+}
+
+/* Sidebar toggle btn (hamburger on mobile) */
+html.dark .sidebar-toggle-btn {
+  background: #0d1b3e;
+  border-color: #1e3a6e;
+  color: #ff6eb4;
+}
+
+/* Role badges */
+html.dark .role-badge.member {
+  background: rgba(30, 58, 110, 0.5);
+  color: var(--text-secondary);
+}
+
+html.dark .color-hex {
+  color: var(--text-secondary);
+}
+
+/* Settings */
+html.dark .settings-group input[type="text"],
+html.dark .settings-group textarea {
+  background: #0f2050;
+  border-color: #1e3a6e;
+  color: var(--text-primary);
+}
+
+html.dark .settings-info-box {
+  background: rgba(30, 58, 110, 0.3);
+  border-color: #1e3a6e;
+  color: #9ab2d8;
+}
+
+html.dark .settings-info-box code {
+  background: rgba(30, 58, 110, 0.6);
+  color: #7eb3ff;
+}
+
+html.dark .settings-form-footer,
+html.dark .student-tab-header,
+html.dark .gallery-tab-header {
+  border-color: #1e3a6e;
+}
+
+html.dark .logo-preview-box {
+  background: #0f2050;
+  border-color: #1e3a6e;
+}
+
+/* Moderator badge */
+html.dark .moderator-restrict-badge {
+  background: rgba(30, 58, 110, 0.3);
+  border-color: #1e3a6e;
+  color: #9ab2d8;
+}
+
+/* Edit/delete buttons in tables */
+html.dark .edit-btn {
+  background: rgba(30, 58, 110, 0.4);
+  color: #7eb3ff;
+  border-color: #1e3a6e !important;
+}
+
+html.dark .edit-btn:hover {
+  background: #1e3a6e;
+  color: #fff;
+  border-color: #1e3a6e !important;
+}
+
+html.dark .edit-piket-btn {
+  background: rgba(30, 58, 110, 0.4);
+  color: #7eb3ff;
+  border-color: #1e3a6e;
+}
+
+html.dark .edit-piket-btn:hover {
+  background: #1e3a6e;
+  color: #fff;
+}
+
+html.dark .empty-table-state {
+  color: var(--text-muted);
+  background: transparent;
+}

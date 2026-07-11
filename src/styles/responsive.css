@@ -1,738 +1,649 @@
-@media (max-width: 640px) {
+/* ══════════════════════════════════════════════════════════════
+   LANDING PAGE — RESPONSIVE STYLES
+   Breakpoints:
+     Tablet       : ≤ 1024px
+     Mobile-L     : ≤ 768px
+     Mobile-M     : ≤ 480px
+     Mobile-S     : ≤ 360px
+   ══════════════════════════════════════════════════════════════ */
+
+/* ─────────────────────────────────────────────────────────────
+   1. TABLET  (≤ 1024px)
+   ───────────────────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  /* Navbar */
+  .desktop-nav {
+    gap: 2px;
+  }
+  .nav-link {
+    padding: 7px 9px;
+    font-size: 0.82rem;
+  }
+
+  /* Hero */
+  .hero {
+    padding: 80px 5% 56px;
+  }
+  .hero-grid {
+    gap: 40px;
+  }
+  .hero-title span {
+    font-size: clamp(3.5rem, 7vw, 6rem);
+  }
+  .hero-title strong {
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  }
+  .stats {
+    gap: 24px;
+    margin-top: 36px;
+  }
+
+  /* Sections */
+  .section {
+    padding: 52px 5%;
+  }
+  .two-col {
+    gap: 28px;
+  }
+
+  /* Project grid: 2 kolom di tablet */
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  .project-card {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   2. MOBILE-L  (≤ 768px)
+   ───────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  /* ── Navbar ──────────────────────────────────────────────── */
   .desktop-nav {
     display: none;
   }
-
   .mobile-toggle {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .navbar {
+    padding: 0 20px;
+  }
+  .nav-inner {
+    height: 60px;
+  }
+  .brand span {
+    font-size: 0.88rem;
+    white-space: nowrap;
+  }
+  .brand-logo-image {
+    width: 36px;
+    height: 36px;
+  }
+  .mobile-menu {
+    margin: 0 20px 12px;
+    border-radius: 16px;
+    padding: 10px;
+  }
+  .mobile-menu button {
+    padding: 11px 14px;
+    font-size: 0.9rem;
+    border-radius: 10px;
   }
 
-  .hero-grid,
-  .two-col,
-  .footer-grid {
-    gap: 20px;
-    grid-template-columns: 1fr;
-  }
-
+  /* ── Hero ────────────────────────────────────────────────── */
   .hero {
-    padding-top: 96px;
+    padding: 76px 5% 48px;
+    min-height: auto;
+    align-items: flex-start;
   }
-
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  /* Foto tampil di atas teks */
   .hero-photo-wrap {
     order: -1;
   }
-
-  .footer-note-wrap {
-    justify-content: flex-start;
+  .photo-card {
+    max-width: 380px;
+    width: 90%;
+    margin: 0 auto;
+    padding: 10px 10px 40px;
+    transform: rotate(1deg);
   }
-}
-
-@media (max-width: 640px) {
-  .section {
-    padding: 42px 4%;
+  .dkv-badge {
+    font-size: 1.5rem;
+    padding: 4px 14px;
+    top: -16px;
   }
-
-  .panel,
-  .gallery-panel {
-    padding: 22px;
-    border-radius: 18px;
+  .photo-caption {
+    font-size: 0.88rem;
   }
-
-  .student-grid,
-  .project-grid {
-    grid-template-columns: 1fr;
+  .eyebrow {
+    font-size: 0.78rem;
+    padding: 5px 14px;
+    margin-bottom: 14px;
   }
-
-  .structure-row {
-    flex-direction: column;
-    gap: 12px;
+  .hero-title span {
+    font-size: clamp(3rem, 12vw, 5rem);
+    line-height: 0.95;
   }
-
-  .line.horizontal {
-    width: 2px;
-    height: 20px;
+  .hero-title strong {
+    font-size: clamp(1.5rem, 6vw, 2.4rem);
+    line-height: 1.1;
+    margin-top: 6px;
   }
-
+  .hero-desc {
+    font-size: 0.96rem;
+    line-height: 1.65;
+    margin-bottom: 24px;
+    max-width: 100%;
+  }
+  .hero-actions {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
   .stats {
     gap: 20px;
+    margin-top: 28px;
+    flex-wrap: wrap;
+  }
+  .stats b {
+    font-size: 1.55rem;
+  }
+  .stats span {
+    font-size: 0.78rem;
+  }
+  /* Blob lebih kecil agar tidak overflow */
+  .blob-right {
+    width: 280px;
+    height: 280px;
+    top: -60px;
+    right: -60px;
+  }
+  .blob-left {
+    width: 220px;
+    height: 220px;
+    bottom: -60px;
+    left: -40px;
   }
 
-  .gallery-head,
+  /* ── Sections umum ───────────────────────────────────────── */
+  .section {
+    padding: 44px 18px;
+  }
+  .two-col {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .panel,
+  .gallery-panel {
+    padding: 22px 18px;
+    border-radius: 18px;
+    width: 100%;
+    box-sizing: border-box;
+  }
   .section-header {
-    align-items: flex-start;
     flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+  .section-header h2,
+  .gallery-head h2 {
+    font-size: 1.4rem;
+    line-height: 1.2;
   }
 
-  .brand span {
+  /* ── Struktur Kelas ──────────────────────────────────────── */
+  .structure-chart {
+    gap: 10px;
+    align-items: center;
+    width: 100%;
+  }
+  .structure-row {
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    width: 100%;
+  }
+  .line.horizontal {
+    width: 2px;
+    height: 16px;
+    align-self: center;
+  }
+  .line.vertical {
+    height: 16px;
+  }
+  .structure-bottom {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+  }
+  .node-box {
+    width: 100%;
+    max-width: 280px;
+    min-width: 0;
+    padding: 10px 16px;
+    box-sizing: border-box;
+    text-align: center;
+    margin: 0 auto;
+  }
+  .node-box div {
+    font-size: 0.75rem;
+  }
+  .node-box strong {
+    font-size: 0.88rem;
+  }
+  .quote-box {
     font-size: 0.85rem;
+    padding: 14px 16px;
+    margin-top: 18px;
   }
 
+  /* ── Daftar Murid ────────────────────────────────────────── */
+  .student-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .student-card {
+    padding: 11px 12px;
+    gap: 10px;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+  .student-card > div {
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+  }
+  .student-card strong {
+    font-size: 0.82rem;
+    line-height: 1.3;
+  }
+  .student-card span {
+    font-size: 0.7rem;
+  }
+
+  /* ── Jadwal Piket ────────────────────────────────────────── */
+  .table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 12px;
+  }
+  table {
+    min-width: 400px;
+    border-spacing: 0 8px;
+  }
+  th {
+    font-size: 0.78rem;
+    padding: 0 8px;
+  }
+  td {
+    padding: 9px 8px;
+    font-size: 0.82rem;
+  }
+  td:first-child {
+    font-size: 0.88rem;
+  }
+  .keep-creating {
+    gap: 12px;
+    margin-top: 18px;
+  }
+  .keep-creating div {
+    font-size: 2rem;
+  }
+  .keep-creating strong {
+    font-size: 0.95rem;
+    padding: 9px 16px;
+  }
+
+  /* ── Project Kelas ───────────────────────────────────────── */
+  .project-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .project-card {
+    aspect-ratio: 4 / 3;
+    min-width: 0;
+    width: 100%;
+    border-radius: 14px;
+  }
+  .project-card h3 {
+    font-size: 0.8rem;
+    line-height: 1.2;
+  }
+  .project-card p {
+    font-size: 0.65rem;
+  }
+  .project-icon {
+    font-size: 1.2rem;
+  }
+
+  /* ── Galeri Kegiatan ─────────────────────────────────────── */
+  .gallery-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 18px;
+  }
   .gallery-card {
-    min-width: 140px;
-    height: 100px;
+    min-width: 150px;
+    height: 110px;
+    border-radius: 14px;
   }
-}
+  .slider-btn {
+    width: 34px;
+    height: 34px;
+    font-size: 0.9rem;
+  }
 
-@media (max-width: 640px) {
+  /* ── Footer ──────────────────────────────────────────────── */
   .footer {
     padding: 40px 5% 24px;
   }
-
   .footer-grid {
-    display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 28px 22px;
-    align-items: start;
+    gap: 28px 20px;
   }
-
-  /* Bagian logo + deskripsi tetap full width di atas */
-  .footer-grid > div:nth-child(1) {
+  /* Brand section full width */
+  .footer-grid > div:first-child {
     grid-column: 1 / -1;
   }
-
-  /* Link cepat di kiri */
-  .footer-grid > div:nth-child(2) {
-    grid-column: 1;
-  }
-
-  /* Kontak Kami + Our School di kanan */
-  .footer-grid > div:nth-child(3) {
-    grid-column: 2;
-  }
-
-  /* Thanks for visiting tetap full width */
+  /* Note tetap full width */
   .footer-note-wrap {
     grid-column: 1 / -1;
     justify-content: flex-start;
   }
-
   .footer h3 {
     font-size: 0.9rem;
     margin-bottom: 10px;
   }
-
   .footer button,
   .footer p {
     font-size: 0.82rem;
   }
-
-  .contact-line {
-    gap: 8px;
-    margin-bottom: 10px;
-    word-break: break-word;
-  }
-
-  .contact-icon {
-    flex-shrink: 0;
-    margin-top: 2px;
-  }
-
   .footer-note {
-    max-width: 190px;
     font-size: 1rem;
+    padding: 14px 16px;
   }
-
   .copyright {
     font-size: 0.78rem;
     line-height: 1.5;
   }
 }
 
-@media (max-width: 768px) {
-  .section {
-    padding: 36px 16px;
+/* ─────────────────────────────────────────────────────────────
+   3. MOBILE-M  (≤ 480px)
+   ───────────────────────────────────────────────────────────── */
+@media (max-width: 480px) {
+  /* ── Navbar ──────────────────────────────────────────────── */
+  .navbar {
+    padding: 0 16px;
+  }
+  .nav-inner {
+    height: 56px;
+  }
+  .brand span {
+    font-size: 0.82rem;
+  }
+  .brand-logo-image {
+    width: 32px;
+    height: 32px;
   }
 
-  .two-col {
-    grid-template-columns: 1fr;
+  /* ── Hero ────────────────────────────────────────────────── */
+  .hero {
+    padding: 70px 16px 40px;
+  }
+  .hero-grid {
     gap: 24px;
   }
-
-  .panel,
-  .gallery-panel {
-    width: 100%;
-    padding: 24px 20px;
-    overflow: hidden;
-  }
-
-  .student-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-  }
-
-  .student-card {
-    width: 100%;
-    min-width: 0;
-    padding: 12px;
-  }
-
-  .student-card > div {
-    width: 42px;
-    height: 42px;
-  }
-
-  .student-card strong {
-    font-size: 0.82rem;
-  }
-
-  .student-card span {
-    font-size: 0.7rem;
-  }
-
-  .project-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-  }
-
-  .project-card {
-    width: 100%;
-    min-width: 0;
-    height: 140px;
-    aspect-ratio: unset;
-  }
-
-  .project-card h3 {
-    font-size: 0.78rem;
-  }
-
-  .project-card p {
-    font-size: 0.65rem;
-  }
-
-  .structure-chart {
-    gap: 12px;
-  }
-
-  .structure-bottom {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 10px;
-    width: 100%;
-  }
-
-  .node-box {
-    width: 100%;
-    min-width: 0;
-  }
-}
-
-@media (max-width: 420px) {
-  .student-grid,
-  .project-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .project-card {
-    height: 150px;
-  }
-}
-
-/* ========================= */
-/* SMALL PHONE FIX 360px-400px */
-/* ========================= */
-
-@media (max-width: 430px) {
-  .navbar {
-    padding: 0 18px;
-  }
-
-  .nav-inner {
-    height: 72px;
-  }
-
-  .brand span {
-    font-size: 0.9rem;
-  }
-
-  .brand-logo-image {
-    width: 42px;
-    height: 42px;
-  }
-
-  .mobile-toggle {
-    width: 48px;
-    height: 48px;
-    font-size: 1.5rem;
-  }
-
-  .section {
-    padding: 32px 14px;
-  }
-
-  .panel,
-  .gallery-panel {
-    padding: 22px 18px;
-    border-radius: 22px;
-  }
-
-  .section-header h2,
-  .gallery-head h2 {
-    font-size: 1.65rem;
-    line-height: 1.15;
-    gap: 8px;
-  }
-
-  .dark-pill {
-    padding: 10px 20px;
-    font-size: 0.82rem;
-  }
-
-  /* Hero */
-  .hero {
-    padding: 92px 18px 42px;
-  }
-
-  .hero-grid {
-    gap: 28px;
-  }
-
   .photo-card {
-    max-width: 100%;
-    padding: 10px 10px 38px;
+    max-width: 320px;
+    padding: 8px 8px 36px;
   }
-
   .dkv-badge {
-    font-size: 1.5rem;
-    top: -16px;
+    font-size: 1.3rem;
+    top: -14px;
+    padding: 3px 12px;
   }
-
-  .photo-caption {
-    font-size: 0.85rem;
-  }
-
   .eyebrow {
     font-size: 0.72rem;
-    padding: 6px 12px;
+    padding: 5px 12px;
+    margin-bottom: 12px;
   }
-
   .hero-title span {
-    font-size: 3.2rem;
-    line-height: 0.95;
+    font-size: clamp(2.6rem, 14vw, 4rem);
   }
-
   .hero-title strong {
-    font-size: 1.75rem;
-    line-height: 1.05;
+    font-size: clamp(1.35rem, 7vw, 2rem);
   }
-
   .hero-desc {
-    font-size: 0.95rem;
-    line-height: 1.55;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
   }
-
-  .hero-actions {
-    gap: 10px;
-  }
-
   .stats {
-    gap: 14px;
+    gap: 16px;
+    margin-top: 22px;
   }
-
   .stats b {
-    font-size: 1.35rem;
+    font-size: 1.4rem;
   }
-
   .stats span {
     font-size: 0.72rem;
   }
 
-  /* Struktur kelas */
-  .node-box {
-    min-width: 150px;
-    max-width: 230px;
-    padding: 9px 14px;
+  /* ── Sections ────────────────────────────────────────────── */
+  .section {
+    padding: 36px 14px;
+  }
+  .panel,
+  .gallery-panel {
+    padding: 18px 14px;
+    border-radius: 16px;
+  }
+  .section-header h2,
+  .gallery-head h2 {
+    font-size: 1.25rem;
+  }
+  .dark-pill {
+    font-size: 0.76rem;
+    padding: 8px 14px;
   }
 
-  .structure-bottom .node-box {
-    min-width: 220px;
-  }
-
-  /* Murid */
+  /* ── Daftar Murid: 1 kolom ───────────────────────────────── */
   .student-grid {
     grid-template-columns: 1fr;
-    gap: 12px;
+    gap: 9px;
   }
-
   .student-card {
-    min-height: 74px;
-    padding: 11px 12px;
+    padding: 10px 12px;
   }
-
   .student-card > div {
-    width: 42px;
-    height: 42px;
-  }
-
-  .student-card strong {
-    font-size: 0.9rem;
-  }
-
-  .student-card span {
-    font-size: 0.74rem;
-  }
-
-  /* Jadwal piket */
-  th,
-  td {
-    font-size: 0.72rem;
-    padding: 8px 6px;
-  }
-
-  td:first-child {
-    font-size: 0.9rem;
-  }
-
-  .check {
-    width: 24px;
-    height: 24px;
-  }
-
-  .keep-creating {
-    gap: 10px;
-  }
-
-  .keep-creating div {
-    font-size: 2rem;
-  }
-
-  .keep-creating strong {
-    font-size: 0.9rem;
-    padding: 9px 14px;
-  }
-
-  /* Project */
-  .project-grid {
-    grid-template-columns: 1fr;
-    gap: 14px;
-  }
-
-  .project-card {
-    height: 160px;
-  }
-
-  .project-card h3 {
-    font-size: 0.9rem;
-  }
-
-  .project-card p {
-    font-size: 0.72rem;
-  }
-
-  /* Gallery */
-  .gallery-card {
-    min-width: 145px;
-    height: 115px;
-  }
-
-  .slider-btn {
     width: 36px;
     height: 36px;
   }
 
-  /* Footer */
-  .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
+  /* ── Piket Table ─────────────────────────────────────────── */
+  table {
+    min-width: 360px;
+  }
+  th {
+    font-size: 0.73rem;
+    padding: 0 5px;
+  }
+  td {
+    padding: 8px 5px;
+    font-size: 0.76rem;
+  }
+  td:first-child {
+    font-size: 0.84rem;
+  }
+  .check {
+    width: 20px;
+    height: 20px;
+    font-size: 0.62rem;
+  }
+  .keep-creating div {
+    font-size: 1.7rem;
+  }
+  .keep-creating strong {
+    font-size: 0.88rem;
+    padding: 8px 13px;
   }
 
+  /* ── Project: 1 kolom ────────────────────────────────────── */
+  .project-grid {
+    grid-template-columns: 1fr;
+    gap: 11px;
+  }
+  .project-card {
+    aspect-ratio: 16 / 9;
+    border-radius: 12px;
+  }
+  .project-card h3 {
+    font-size: 0.88rem;
+  }
+  .project-card p {
+    font-size: 0.68rem;
+  }
+  .project-icon {
+    font-size: 1.1rem;
+  }
+
+  /* ── Tombol hero full-width ──────────────────────────────── */
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .hero-actions button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* ── Galeri ──────────────────────────────────────────────── */
+  .gallery-card {
+    min-width: 130px;
+    height: 100px;
+  }
+
+  /* ── Footer: 1 kolom ─────────────────────────────────────── */
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
   .footer-grid > div,
   .footer-note-wrap {
     grid-column: 1 / -1 !important;
   }
-
-  .footer-brand {
-    flex-wrap: wrap;
-  }
-
-  .footer h3 {
-    font-size: 0.95rem;
-  }
-
-  .footer button,
-  .footer p,
-  .contact-line {
-    font-size: 0.85rem;
+  .footer-note-wrap {
+    justify-content: flex-start;
   }
 }
 
-@media (max-width: 380px) {
-  .section-header h2,
-  .gallery-head h2 {
-    font-size: 1.45rem;
+/* ─────────────────────────────────────────────────────────────
+   4. MOBILE-S  (≤ 360px)
+   ───────────────────────────────────────────────────────────── */
+@media (max-width: 360px) {
+  /* Navbar */
+  .brand span {
+    display: none; /* Sembunyikan teks brand, hanya tampil logo */
+  }
+  .nav-inner {
+    height: 52px;
   }
 
+  /* Hero */
+  .hero {
+    padding: 62px 14px 36px;
+  }
   .hero-title span {
-    font-size: 2.8rem;
+    font-size: 2.4rem;
   }
-
   .hero-title strong {
-    font-size: 1.45rem;
-  }
-
-  .panel,
-  .gallery-panel {
-    padding: 20px 16px;
-  }
-
-  .project-card {
-    height: 145px;
-  }
-}
-
-@media (max-width: 430px) {
-  .section {
-    padding: 28px 12px;
-  }
-
-  .panel,
-  .gallery-panel {
-    padding: 18px 14px;
-    border-radius: 18px;
-  }
-
-  .section-header h2,
-  .gallery-head h2 {
-    font-size: 1.35rem;
-    line-height: 1.2;
-  }
-
-  .dark-pill {
-    padding: 9px 16px;
-    font-size: 0.78rem;
-  }
-
-  /* Struktur kelas */
-  .structure-chart {
-    gap: 10px;
-    align-items: center;
-  }
-
-  .node-box {
-    width: auto;
-    min-width: 150px;
-    max-width: 230px;
-    padding: 8px 12px;
-    margin-inline: auto;
-  }
-
-  .structure-bottom {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .structure-bottom .node-box {
-    min-width: 210px;
-  }
-
-  /* Daftar murid: 1 kolom stabil */
-  .student-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
-
-  .student-card {
-    width: 100%;
-    min-width: 0;
-    min-height: 66px;
-    padding: 10px;
-  }
-
-  .student-card > div {
-    width: 38px;
-    height: 38px;
-  }
-
-  .student-card strong {
-    font-size: 0.85rem;
-  }
-
-  .student-card span {
-    font-size: 0.7rem;
-  }
-
-  /* Project: 1 kolom tapi lebih kecil */
-  .project-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-
-  .project-card {
-    width: 100%;
-    min-width: 0;
-    height: 135px;
-    aspect-ratio: unset;
-  }
-
-  .project-card h3 {
-    font-size: 0.82rem;
-  }
-
-  .project-card p {
-    font-size: 0.68rem;
-  }
-
-  /* Piket: jangan melebar */
-  .table-wrap {
-    overflow-x: auto;
-  }
-
-  table {
-    min-width: 520px;
-  }
-}
-
-/* ========================= */
-/* FIX SMALL PHONE: PIKET + PROJECT */
-/* ========================= */
-
-@media (max-width: 430px) {
-  /* Jadwal Piket jangan jadi tabel melebar */
-  .table-wrap {
-    overflow-x: visible;
-  }
-
-  table {
-    width: 100%;
-    min-width: 0;
-    border-spacing: 0 8px;
-  }
-
-  th {
-    font-size: 0.7rem;
-    padding: 0 4px;
-  }
-
-  td {
-    font-size: 0.72rem;
-    padding: 8px 4px;
-    line-height: 1.35;
-  }
-
-  td:first-child {
-    font-size: 0.85rem;
-  }
-
-  .check {
-    width: 22px;
-    height: 22px;
-    font-size: 0.65rem;
-  }
-
-  .keep-creating {
-    margin-top: 20px;
-    gap: 10px;
-  }
-
-  .keep-creating div {
-    font-size: 1.8rem;
-  }
-
-  .keep-creating strong {
-    font-size: 0.82rem;
-    padding: 8px 14px;
-    border-radius: 10px;
-  }
-
-  /* Project Kelas balik jadi grid kecil, bukan card melebar keluar */
-  .project-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 12px;
-    width: 100%;
-    max-width: 100%;
-    overflow: visible;
-    padding: 0;
-  }
-
-  .project-card {
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-    height: 135px;
-    aspect-ratio: unset;
-    border-radius: 16px;
-  }
-
-  .project-card h3 {
-    font-size: 0.82rem;
-  }
-
-  .project-card p {
-    font-size: 0.68rem;
-  }
-
-  .project-icon {
     font-size: 1.25rem;
   }
+  .hero-desc {
+    font-size: 0.86rem;
+  }
+  .stats {
+    gap: 12px;
+  }
+  .stats b {
+    font-size: 1.25rem;
+  }
+  .photo-card {
+    max-width: 290px;
+  }
+  .dkv-badge {
+    font-size: 1.1rem;
+    padding: 3px 10px;
+  }
 
-  .project-play {
-    width: 26px;
-    height: 26px;
+  /* Sections */
+  .section {
+    padding: 30px 12px;
+  }
+  .panel,
+  .gallery-panel {
+    padding: 16px 12px;
+    border-radius: 14px;
+  }
+  .section-header h2,
+  .gallery-head h2 {
+    font-size: 1.1rem;
+  }
+  .node-box {
+    max-width: 240px;
+    padding: 8px 12px;
+  }
+  .node-box div {
+    font-size: 0.7rem;
+  }
+  .node-box strong {
+    font-size: 0.8rem;
+  }
+  .student-card > div {
+    width: 32px;
+    height: 32px;
+  }
+  .student-card strong {
+    font-size: 0.78rem;
+  }
+  .student-card span {
     font-size: 0.65rem;
   }
-}
-
-/* Fix struktur kelas untuk HP besar / DPI 500-600 */
-@media (min-width: 431px) and (max-width: 768px) {
-  .structure-chart {
-    align-items: center;
-    gap: 14px;
+  .project-card {
+    aspect-ratio: 16 / 9;
   }
-
-  .node-box {
-    width: fit-content;
-    min-width: 160px;
-    max-width: 250px;
-    padding: 10px 18px;
-    margin-inline: auto;
+  .project-card h3 {
+    font-size: 0.8rem;
   }
-
-  .structure-row {
-    flex-direction: column;
-    gap: 14px;
+  .keep-creating strong {
+    font-size: 0.82rem;
+    padding: 7px 11px;
   }
-
-  .structure-bottom {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    width: 100%;
+  .gallery-card {
+    min-width: 115px;
+    height: 88px;
   }
-
-  .structure-bottom .node-box {
-    width: fit-content;
-    min-width: 230px;
-    max-width: 280px;
+  table {
+    min-width: 320px;
   }
-
-  .line.horizontal {
-    width: 2px;
-    height: 22px;
+  th {
+    font-size: 0.68rem;
   }
-}
-
-@media (max-width: 430px) {
-  .footer-brand {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    flex-wrap: wrap;
+  td {
+    font-size: 0.7rem;
   }
-
-  .footer-brand h3 {
-    font-size: 1rem;
-    line-height: 1.2;
-  }
-
-  .footer-brand img {
-    width: 42px;
-    height: 42px;
+  td:first-child {
+    font-size: 0.78rem;
   }
 }
