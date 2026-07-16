@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { FaInstagram, FaTiktok, FaGlobe, FaYoutube } from "react-icons/fa";
 import Image from "next/image";
@@ -14,7 +16,7 @@ export function Footer() {
           <div>
             <div className="footer-brand">
               <Image
-                src="/dkv.png"
+                src="/dkv.webp"
                 alt="logo DKV"
                 className="brand-logo-image"
                 width={40}
@@ -22,7 +24,7 @@ export function Footer() {
               />
               <span>Desain Komunikasi Visual</span>
               <Image
-                src="/dhakar.png"
+                src="/dhakar.webp"
                 alt="logo Dhakar"
                 className="brand-logo-image"
                 width={40}
@@ -98,15 +100,11 @@ export function Footer() {
           </div>
 
           <div className="footer-note-wrap">
-            <motion.div
-              animate={{ rotate: [2, -1, 2] }}
-              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-              className="footer-note"
-            >
+            <div className="footer-note footer-note--float">
               Thanks for
               <br />
               visiting! 😊
-            </motion.div>
+            </div>
           </div>
         </div>
 

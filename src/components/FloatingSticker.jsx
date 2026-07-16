@@ -1,30 +1,20 @@
 "use client";
 
-import { motion } from "framer-motion";
-
 export function FloatingSticker({ icon, color = "#ff3d9a", style, delay = 0 }) {
   return (
-    <motion.div
-      animate={{
-        y: [0, -12, 0],
-        rotate: [0, 5, -4, 0],
-      }}
-      transition={{
-        duration: 4,
-        delay,
-        repeat: Infinity,
-        ease: "easeInOut",
-      }}
+    <div
+      className="floating-sticker"
       style={{
         position: "absolute",
         fontSize: "2rem",
         userSelect: "none",
         pointerEvents: "none",
         color,
+        animationDelay: `${delay}s`,
         ...style,
       }}
     >
       {icon}
-    </motion.div>
+    </div>
   );
 }

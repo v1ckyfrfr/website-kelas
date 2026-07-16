@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { FloatingSticker } from "@/components/FloatingSticker";
 import { PinkButton } from "@/components/PinkButton";
@@ -121,7 +123,7 @@ export function Hero() {
                 style={{ position: "relative", width: "100%", height: "100%" }}
               >
                 <Image
-                  src="/gallery/kartini.jpg"
+                  src="/gallery/kartini.webp"
                   alt="Foto Kelas"
                   fill
                   priority
@@ -136,13 +138,9 @@ export function Hero() {
             <div className="photo-caption">WE DESIGN THE FUTURE ✦</div>
           </motion.div>
 
-          <motion.div
-            animate={{ rotate: [-6, -3, -6], y: [0, -4, 0] }}
-            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-            className="dkv-badge"
-          >
+          <div className="dkv-badge dkv-badge--float">
             DKV ★
-          </motion.div>
+          </div>
         </motion.div>
       </div>
     </section>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { motion } from "framer-motion";
 
 import { NAV_LINKS } from "@/data/navlinks";
@@ -12,7 +12,8 @@ import Image from "next/image";
 
 const MotionImage = motion.create(Image);
 
-export function Navbar({ active, setActive }) {
+export function Navbar() {
+  const [active, setActive] = useState("Beranda");
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const { isDark, toggle } = useDarkMode();
@@ -26,11 +27,11 @@ export function Navbar({ active, setActive }) {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const handleNavClick = (link) => {
+  const handleNavClick = useCallback((link) => {
     setActive(link.label);
     setMobileOpen(false);
     scrollToSection(link.target);
-  };
+  }, []);
 
   return (
     <>
@@ -54,7 +55,7 @@ export function Navbar({ active, setActive }) {
                 rotate: -10,
                 scale: 1.08,
               }}
-              src="/logo.png"
+              src="/logo.webp"
               alt="logo DKV"
               width={40}
               height={40}

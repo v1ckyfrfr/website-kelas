@@ -130,6 +130,7 @@ export function GaleriSection() {
                         alt={caption || `Galeri kegiatan ${index + 1}`}
                         width={800}
                         height={500}
+                        loading="lazy"
                         style={{
                           width: "100%",
                           height: "100%",

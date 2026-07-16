@@ -86,12 +86,7 @@ export function PiketSection() {
             </div>
 
             <div className="keep-creating">
-              <motion.div
-                animate={{ rotate: [-4, 4, -4] }}
-                transition={{ duration: 2, repeat: Infinity }}
-              >
-                📷
-              </motion.div>
+              <div className="keep-creating-icon">📷</div>
               <strong>KEEP CREATING!</strong>
             </div>
           </div>
