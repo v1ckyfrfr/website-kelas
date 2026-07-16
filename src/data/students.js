@@ -25,7 +25,7 @@ export const STUDENTS = [
   {
     name: "Vicky R.",
     role: "Anggota & Developer",
-    photo: "/students/vicky.jpg",
+    photo: "/students/vicky.webp",
     color: "#ff6eb4",
   },
   { name: "Khalif A. F.", role: "Anggota", icon: "fire", color: "#ff85c2" },
