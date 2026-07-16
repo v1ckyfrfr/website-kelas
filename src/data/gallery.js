@@ -1,13 +1,13 @@
 export const GALLERY_ITEMS = [
-  "/gallery/blackandwhite.jpg",
-  "/gallery/kartini.jpg",
-  "/gallery/boys.jpg",
-  "/gallery/girls.jpg",
-  "/gallery/workshopPFN.jpg",
-  "/gallery/perpusnas.jpg",
-  "/gallery/lastkamis.jpg",
-  "/gallery/jogja.jpg",
-  "/gallery/jogjaLandscape2.jpeg",
+  "/gallery/blackandwhite.webp",
+  "/gallery/kartini.webp",
+  "/gallery/boys.webp",
+  "/gallery/girls.webp",
+  "/gallery/workshopPFN.webp",
+  "/gallery/perpusnas.webp",
+  "/gallery/lastkamis.webp",
+  "/gallery/jogja.webp",
+  "/gallery/jogjaLandscape2.webp",
 ];
 export const GALLERY_COLORS = [
   "#ff85c2",
