@@ -199,3 +199,37 @@
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(255, 61, 154, 0.4);
 }
+
+/* CSS-based animations — more performant than JS-driven framer-motion infinite */
+@keyframes badgeFloat {
+  0%,
+  100% {
+    transform: translateX(-50%) rotate(-6deg) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) rotate(-3deg) translateY(-4px);
+  }
+}
+
+.dkv-badge--float {
+  animation: badgeFloat 3s ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes stickerFloat {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-12px) rotate(5deg);
+  }
+  66% {
+    transform: translateY(-6px) rotate(-4deg);
+  }
+}
+
+.floating-sticker {
+  animation: stickerFloat 4s ease-in-out infinite;
+  will-change: transform;
+}

@@ -207,8 +207,25 @@ td:first-child {
   gap: 16px;
 }
 
-.keep-creating div {
+.keep-creating div,
+.keep-creating-icon {
   font-size: 2.5rem;
+}
+
+@keyframes emojiRock {
+  0%,
+  100% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(4deg);
+  }
+}
+
+.keep-creating-icon {
+  animation: emojiRock 2s ease-in-out infinite;
+  display: inline-block;
+  will-change: transform;
 }
 
 .keep-creating strong {
