@@ -1,4 +1,3 @@
-import { title } from "process";
 import { Nunito } from "next/font/google";
 import "./globals.css";
 
@@ -6,11 +5,13 @@ const nunito = Nunito({
   subsets: ["latin"],
   weight: ["400", "600", "700", "800", "900"],
   display: "swap",
+  preload: true,
 });
 
 export const metadata = {
   title: "Website Kelas DKV",
-  description: "DKV 1ST Generation",
+  description:
+    "DKV 1ST Generation – Website resmi kelas Desain Komunikasi Visual SMK Dharma Karya",
 };
 
 export const viewport = {
