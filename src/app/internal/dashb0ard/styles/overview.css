@@ -166,3 +166,34 @@
   display: inline-flex;
   align-items: center;
 }
+
+/* Clear Logs Button */
+.clear-logs-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: #fff0f0;
+  color: #c0392b;
+  border: 1.5px solid #f5c6c6;
+  border-radius: 8px;
+  padding: 4px 10px;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.clear-logs-btn:hover {
+  background: #c0392b;
+  color: #fff;
+  border-color: #c0392b;
+  box-shadow: 0 4px 10px rgba(192, 57, 43, 0.25);
+  transform: translateY(-1px);
+}
+
+.clear-logs-btn:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
