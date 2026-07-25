@@ -17,6 +17,7 @@ import { supabase } from "@/lib/supabase";
 // agar warna tidak desync saat dark mode toggle
 function StudentCard({ student, index }) {
   const [hovered, setHovered] = useState(false);
+  const [imgError, setImgError] = useState(false);
 
   return (
     <motion.div
@@ -43,9 +44,14 @@ function StudentCard({ student, index }) {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
+          overflow: "hidden",
+          width: "40px",
+          height: "40px",
+          borderRadius: "999px",
+          flexShrink: 0,
         }}
       >
-        {student.photo ? (
+        {student.photo && !imgError ? (
           <Image
             src={student.photo}
             alt={student.name}
@@ -54,7 +60,10 @@ function StudentCard({ student, index }) {
             style={{
               objectFit: "cover",
               borderRadius: "999px",
+              width: "40px",
+              height: "40px",
             }}
+            onError={() => setImgError(true)}
           />
         ) : (
           <StudentIcon
