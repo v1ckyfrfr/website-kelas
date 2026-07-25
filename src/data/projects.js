@@ -7,6 +7,7 @@ export const PROJECTS = [
     bg: "#1a1a2e",
     accent: "#ff6eb4",
   },
+
   {
     title: "Project 2",
     tag: "Lorem ipsum",
@@ -14,6 +15,7 @@ export const PROJECTS = [
     accent: "#ffffff",
     icon: "📰",
   },
+
   {
     title: "Project 3",
     tag: "Video editing",
@@ -22,6 +24,7 @@ export const PROJECTS = [
     icon: "🎥",
     video: "/videos/stopmotion.mp4",
   },
+
   {
     title: "Project 4",
     tag: "Lorem Ipsum",
@@ -29,6 +32,7 @@ export const PROJECTS = [
     accent: "#ffffff",
     icon: "✦",
   },
+
   {
     title: "Project 5",
     tag: "Typography",
@@ -36,6 +40,7 @@ export const PROJECTS = [
     accent: "#333333",
     icon: "Aa",
   },
+  
   {
     title: "Project 6",
     tag: "Photography",
