@@ -1,59 +1,59 @@
 export const STUDENTS = [
   {
     name: "Farah Ghaida",
-    role: "Ketua Kelas",
+    role: "Anggota",
     icon: "crown",
     color: "#ff6eb4",
   },
 
   {
     name: "Annisa Nur Rohmah",
-    role: "Wakil Ketua",
+    role: "Anggota",
     icon: "star",
     color: "#ff85c2",
   },
 
   { 
     name: "Lyana W.", 
-    role: "Sekretaris 1", 
+    role: "Anggota", 
     icon: "edit", 
     color: "#ffadd6" 
   },
 
   { name: "Glorya A.", 
-    role: "Sekretaris 2", 
+    role: "Bendahara", 
     icon: "edit", 
     color: "#ffc4e3" 
   },
 
   { name: "Reyhan", 
-    role: "Keamanan 1", 
+    role: "Wakil Ketua", 
     photo: "/students/rehan.png",
     color: "#ff6eb4" 
   },
 
   {
     name: "Naofal Dwi S.",
-    role: "Keamanan 2",
+    role: "Wakil Ketua",
     photo: "/students/naofal.png",
     color: "#ff85c2",
   },
 
   { name: "Amanda P.", 
-    role: "Bendahara 1", 
+    role: "Anggota", 
     icon: "coins", 
     color: "#ffadd6" 
   },
 
   { name: "Velita S.", 
-    role: "Bendahara 2", 
+    role: "Anggota", 
     icon: "coins", 
     color: "#ffc4e3" 
   },
 
   {
     name: "Vicky R.",
-    role: "Anggota & Developer",
+    role: "Sekretaris 1",
     photo: "/students/vickyR.png",
     color: "#ff6eb4",
   },
@@ -79,7 +79,7 @@ export const STUDENTS = [
   },
 
   { name: "Zacky Q.", 
-    role: "Anggota", 
+    role: "Sekretaris 2", 
     photo: "/students/zacky.png",
     color: "#ffadd6" 
   },
