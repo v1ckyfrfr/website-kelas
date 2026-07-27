@@ -8,25 +8,25 @@ export const STRUCTURE = [
   { 
     id: "ketua", 
     label: "Ketua Kelas", 
-    name: "Farah G." 
+    name: "Naofal Dwi S." 
   },
 
   {
      id: "wakil", 
     label: "Wakil Ketua", 
-    name: "Annisa N. R." 
+    name: "Reyhan" 
   },
 
   {
      id: "sek", 
     label: "Sekretaris 1 & 2", 
-    name: "Lyana W. - Glorya A." 
+    name: "Vicky R. - Zacky Q." 
   },
 
   {
      id: "ben", 
     label: "Bendahara 1 & 2", 
-    name: "Amanda P. - Velita S." 
+    name: "Glorya A. - Velita S." 
   },
   
   { 
