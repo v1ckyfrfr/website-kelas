@@ -2,27 +2,27 @@ export const PIKET = [
   { 
     day: "Senin", 
     group: "Kelompok 1", 
-    members: "Lyana, Farah, Vicky" 
+    members: "Lyana, Reyhan, Zacky" 
   },
 
   { day: "Selasa", 
     group: "Kelompok 2", 
-    members: "Velita, Dirga, Vinza" 
+    members: "Amanda, Anisa, Glorya" 
   },
 
   { 
     day: "Rabu", 
     group: "Kelompok 3", 
-    members: "Reyhan, Glorya, Zacky" 
+    members: "Vinza, Farah, Dirga" 
   },
 
   { day: "Kamis", 
     group: "Kelompok 4", 
-    members: "Naofal, Amanda" 
+    members: "Vicky, Naofal, Khalif" 
   },
   
   { day: "Jumat", 
     group: "Kelompok 5", 
-    members: "Khalif, Anisa" 
+    members: "SEMUA MURID" 
   },
 ];
